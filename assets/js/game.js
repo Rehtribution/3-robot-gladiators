@@ -3,20 +3,21 @@ var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
-var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 
-console.log(enemyNames.length);
+var enemynames = ["Roborto", "Amy Android", "Robo Trumble"];
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-for(var i=0; i<3; i++) {
-    console.log("apple");
+//console.log(enemynames.length);
+
+for(var i = 0; i < enemynames.length; i++) {
+    console.log(enemynames[i]);
+    console.log(i);
+    console.log(enemynames[i] + " is at " + i + " index");
 }
 
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roborto";
-var enemyHealth = 50;
-var enemyAttack = 12;
 
 // fight function
 var fight = function () {
@@ -31,20 +32,20 @@ var fight = function () {
         // remove enemy's health by subtracting the amount set in the playerAttack variable
         enemyHealth = enemyHealth - playerAttack;
         console.log(
-            playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+            playerName + " attacked " + enemynames + ". " + enemynames + " now has " + enemyHealth + " health remaining."
         );
 
         // check enemy's health
         if (enemyHealth <= 0) {
-            window.alert(enemyName + " has died!");
+            window.alert(enemynames + " has died!");
         } else {
-            window.alert(enemyName + " still has " + enemyHealth + " health left.");
+            window.alert(enemynames + " still has " + enemyHealth + " health left.");
         }
 
         // remove players's health by subtracting the amount set in the enemyAttack variable
         playerHealth = playerHealth - enemyAttack;
         console.log(
-            enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+            enemynames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
         );
 
         // check player's health
@@ -75,4 +76,6 @@ var fight = function () {
 };
 
 // run fight function to start game
-fight();
+for(var i = 0; i < enemynames.length; i++) {
+    fight(enemynames[i]);
+}
