@@ -9,6 +9,18 @@ var randomNumber = function (min, max) {
     return value;
 };
 
+// function to set name
+var getPlayerName = function() {
+    var name = "";
+  
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+      }
+  
+    console.log("Your robot's name is " + name);
+    return name;
+  };
+
 var fightOrSkip = function () {
     // ask player if they'd like to fight or skip using fightOrSkip function
     var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -200,7 +212,7 @@ var shop = function () {
 
 // player information
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
