@@ -25,7 +25,7 @@ var fightOrSkip = function () {
 
         //if yes (true), leave fight
         if (confirmSkip) {
-            window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
+            window.alert(playerInfo.name + " has decided to skip this fight. -10 points!");
             // subtract money from playerMoney for skipping, but don't let them go into the negative
             playerInfo.money = Math.max(0, playerInfo.money - 10);
 
